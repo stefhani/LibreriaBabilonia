@@ -1,0 +1,25 @@
+Se observa que el proyecto spring boot creado por la plataforma de tipo :
+
+-jar -> se usa la estructura de fron-end /resources/
+                                                    static
+                                                          /css
+                                                          /img
+                                                    templates
+                                                           index.html
+
+-war -> se usa la estructura de fron-end /main/webapp/WEB_INF/
+                                                            jsp
+                                                               -> index.jsp
+ Para que el sistema se de cuenta de los archivos .jsp en el archivo "application.properties"
+
+spring.mvc.view.prefix:/WEB-INF/jsp/
+(va ser la externsion de los archivos que se usa como paginas web )
+spring.mvc.view.suffix: .jsp
+
+En el .pom (dependenciar) agregar :
+
+<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+</dependency>
